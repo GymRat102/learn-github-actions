@@ -1,0 +1,11 @@
+name: test-download-artifact
+run-name: ${{ github.actor }} is testing downloading artifact
+on: [push]
+jobs:
+  download-artifact-from-previous-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file
